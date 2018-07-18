@@ -1,0 +1,46 @@
+pragma solidity ^0.4.24;
+contract Calculator { 
+        uint public res;
+        event Increment (uint256 value);
+        event Decriment (uint256 value);
+        event Umnoz (uint256 value);
+        event Delen (uint256 value);
+        event Stepen (uint256 value);
+        
+        function inc () public {
+            res++ ; 
+            emit Increment (res);
+        }
+         
+        function dec () public {
+            res-- ;
+            emit Decriment (res);
+        }
+        
+        function slozenie (uint256 _value) public {
+            res = res + _value;
+            emit Increment (res);
+        }
+        
+        function rasnost(uint256 _value) public {
+            res = res - _value;
+            emit Decriment (res);
+        }
+        
+        function umnozenie (uint256 _value) public {
+            res = res * _value;
+            emit Umnoz (res);
+        }
+        
+        function stepen (uint256 value) public {
+            res = value ** 2;
+            emit Stepen (res);
+        }
+            
+            
+        
+         function delenie (uint256 _value) public {
+             res = res / _value;
+             emit Delen (res);
+         }
+}       
